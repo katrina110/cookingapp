@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cooking in App</title>
+
+	<link rel="icon" href="images/favicon.png">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:wght@300..900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<!-- navbar -->
+	<div class="navbar">
+		<div class="container">
+			<div class="row">
+				<div class="col s12">
+					<div class="navbar-title-sm">
+						<h3>Add Recipe</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end navbar -->
+
+	<!-- spacer -->
+	<div class="spacer-block spacer-top"></div>
+	<!-- end spacer -->
+
+	<!-- add recipe -->
+	<div class="add-recipe">
+		<div class="container">
+			
+			<div class="add-image">
+				<h4>Add recipe photo</h4>
+				<p class="text-extra-small">The image has to be png, jpg or jpeg</p>
+				<form>
+					<input id="add-image1" type="file">
+					<label for="add-image1">
+						<span class="button">Image</span>
+					</label>
+				</form>
+			</div>
+
+			<!-- spacer -->
+			<div class="spacer-block"></div>
+			<!-- end spacer -->
+
+			<div class="add-title-recipe">
+				<div class="block-title title-sm">
+					<h3>Recipe Title</h3>
+				</div>
+				<form>
+					<input type="text" placeholder="ex: Spicy Chicken Soup">
+				</form>
+			</div>
+
+			<!-- spacer -->
+			<div class="spacer-block"></div>
+			<!-- end spacer -->
+
+			<div class="add-ingredients">
+				<div class="block-title title-sm">
+					<h3>Ingredients</h3>
+				</div>
+				<form>
+					<input type="text" placeholder="Ingredient 1">
+					<input type="text" placeholder="Ingredient 2">
+					<input type="text" placeholder="Ingredient 3">
+				</form>
+			</div>
+
+			<!-- spacer -->
+			<div class="spacer-block"></div>
+			<!-- end spacer -->
+
+			<div class="add-step">
+				<div class="block-title title-sm">
+					<h3>Steps</h3>
+				</div>
+				<form>
+					<textarea placeholder="Step 1"></textarea>
+					<input id="add-image2" type="file">
+					<label for="add-image2">
+						<ion-icon name="camera-outline"></ion-icon>
+					</label>
+
+					<!-- divider -->
+					<div class="divider"></div>
+					<!-- end divider -->
+
+					<textarea placeholder="Step 2"></textarea>
+					<input id="add-image3" type="file">
+					<label for="add-image3">
+						<ion-icon name="camera-outline"></ion-icon>
+					</label>
+				</form>
+			</div>
+
+			<!-- spacer -->
+			<div class="spacer-block"></div>
+			<!-- end spacer -->
+
+			<div class="button-wrapper">
+				<div class="row">
+					<div class="col s6">
+						<div class="button">Upload</div>
+					</div>
+					<div class="col s6">
+						<div class="button button-outline">Save</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- end add recipe -->
+
+	<!-- spacer -->
+	<div class="spacer-block spacer-bottom"></div>
+	<!-- end spacer -->
+
+	<!-- toolbar bottom -->
+	<div class="toolbar">
+		<div class="container">
+			<ul class="toolbar-bottom toolbar-wrap">
+				<li class="toolbar-item">
+					<a href="index.html" class="toolbar-link">
+						<ion-icon name="home-outline"></ion-icon>
+					</a>
+				</li>
+				<li class="toolbar-item">
+					<a href="searchbar.html" class="toolbar-link">
+						<ion-icon name="search-outline"></ion-icon>
+					</a>
+				</li>
+				<li class="toolbar-item toolbar-add">
+					<a href="add-recipe.html" class="toolbar-link toolbar-link-active">
+						<ion-icon name="add-circle"></ion-icon>
+					</a>
+				</li>
+				<li class="toolbar-item">
+					<a href="saved-recipe.html" class="toolbar-link">
+						<ion-icon name="bookmark-outline"></ion-icon>
+					</a>
+				</li>
+				<li class="toolbar-item">
+					<a href="profile.html" class="toolbar-link">
+						<ion-icon name="person-outline"></ion-icon>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- end toolbar bottom -->
+
+	<script src="js/jquery-3.7.1.min.js"></script>
+	<script src="js/materialize.min.css"></script>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	<script src="js/swiper-bundle.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>
