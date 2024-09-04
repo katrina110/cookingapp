@@ -42,13 +42,14 @@
 			<div class="block-title title-sm">
 					<h3>Create Your Account</h3>
 				</div>
-			<form>
-				<input type="text" placeholder="Email">
-				<input type="text" placeholder="Username">
-				<input type="text" placeholder="Password">
-				<div class="button">Sign Up</div>
+			<form id="signup-form">
+				<input required id="name" type="text" placeholder="Name">
+				<input required id="location" type="text" placeholder="Address">
+				<input required id="email" type="text" placeholder="Email">
+				<input required id="password" type="text" placeholder="Password">
+				<button type="submit" id="signup-btn" class="button">Sign Up</button>
 				<div class="spacer-block spacer-sm"></div>
-				<p>Already have a account? <a href="Login.html">Login here</a></p>
+				<p>Already have a account? <a href="login.html">Login here</a></p>
 				<div class="spacer-block"></div>
 				<p>By registering I accept the <span>terms of use</span> and data <span>privacy policy</span></p>
 			</form>
@@ -59,13 +60,19 @@
 	<!-- spacer -->
 	<div class="spacer-block"></div>
 	<!-- end spacer -->
-
+	<script src="cordova.js"></script>
+	<script src="js/index.js"></script>
 	<script src="js/jquery-3.7.1.min.js"></script>
 	<script src="js/materialize.min.css"></script>
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	<script src="js/swiper-bundle.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/firebase-storage.js"></script>
+	<script src="js/signup.js"></script>
+	<script>
+        
+	</script>
 
 </body>
 </html>

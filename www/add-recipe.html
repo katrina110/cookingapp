@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +10,15 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:wght@300..900&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:wght@300..900&display=swap"
+		rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 	<link rel="stylesheet" href="css/swiper-bundle.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 	<!-- navbar -->
@@ -39,16 +42,17 @@
 	<!-- add recipe -->
 	<div class="add-recipe">
 		<div class="container">
-			
+
 			<div class="add-image">
 				<h4>Add recipe photo</h4>
 				<p class="text-extra-small">The image has to be png, jpg or jpeg</p>
 				<form>
-					<input id="add-image1" type="file">
-					<label for="add-image1">
+					<input id="recipe-image" class="image-input" data-img-preview="#recipe-image-preview" type="file">
+					<label for="recipe-image">
 						<span class="button">Image</span>
 					</label>
 				</form>
+				<img id="recipe-image-preview" src="" class="image-preview" alt="">
 			</div>
 
 			<!-- spacer -->
@@ -60,7 +64,16 @@
 					<h3>Recipe Title</h3>
 				</div>
 				<form>
-					<input type="text" placeholder="ex: Spicy Chicken Soup">
+					<input id="recipe-title" type="text" placeholder="ex: Spicy Chicken Soup">
+				</form>
+			</div>
+			<br>
+			<div class="">
+				<div class="block-title title-sm">
+					<h3>Description</h3>
+				</div>
+				<form>
+					<textarea id="recipe-description" placeholder="Description"></textarea>
 				</form>
 			</div>
 
@@ -73,9 +86,12 @@
 					<h3>Ingredients</h3>
 				</div>
 				<form>
-					<input type="text" placeholder="Ingredient 1">
-					<input type="text" placeholder="Ingredient 2">
-					<input type="text" placeholder="Ingredient 3">
+					<div id="ingredients">
+						<input type="text" class="ingredient" placeholder="Ingredient 1">
+						<input type="text" class="ingredient" placeholder="Ingredient 2">
+						<input type="text" class="ingredient" placeholder="Ingredient 3">
+					</div>
+					<button id="add-ingredient" type="button" class="button button-outline">Add ingredient</button>
 				</form>
 			</div>
 
@@ -88,37 +104,45 @@
 					<h3>Steps</h3>
 				</div>
 				<form>
-					<textarea placeholder="Step 1"></textarea>
-					<input id="add-image2" type="file">
-					<label for="add-image2">
-						<ion-icon name="camera-outline"></ion-icon>
-					</label>
+					<div id="steps">
+						<div class="step-group">
+							<input type="text" class="step-title" placeholder="Title">
+							<textarea class="step-description" placeholder="Instruction"></textarea>
+							<input class="step-image-input image-input" data-img-preview="#step-1-image-preview"
+								type="file">
+							<label class="image-input-label">
+								<ion-icon name="camera-outline"></ion-icon>
+							</label>
+							<img src="" class="image-preview" id="step-1-image-preview" alt="">
+						</div>
+						<!-- divider -->
+						<div class="divider"></div>
+						<!-- end divider -->
+						<div class="step-group">
+							<input type="text" class="step-title" placeholder="Title">
+							<textarea class="step-description" placeholder="Instruction"></textarea>
+							<input class="step-image-input image-input" data-img-preview="#step-2-image-preview"
+								type="file">
+							<label class="image-input-label">
+								<ion-icon name="camera-outline"></ion-icon>
+							</label>
+							<img src="" class="image-preview" id="step-2-image-preview" alt="">
 
-					<!-- divider -->
-					<div class="divider"></div>
-					<!-- end divider -->
-
-					<textarea placeholder="Step 2"></textarea>
-					<input id="add-image3" type="file">
-					<label for="add-image3">
-						<ion-icon name="camera-outline"></ion-icon>
-					</label>
+						</div>
+					</div>
+					<br>
+					<button id="add-step" type="button" class="button col button-outline">Add step</button>
 				</form>
 			</div>
-
 			<!-- spacer -->
 			<div class="spacer-block"></div>
 			<!-- end spacer -->
+			<!-- divider -->
+			<div class="divider"></div>
+			<!-- end divider -->
 
 			<div class="button-wrapper">
-				<div class="row">
-					<div class="col s6">
-						<div class="button">Upload</div>
-					</div>
-					<div class="col s6">
-						<div class="button button-outline">Save</div>
-					</div>
-				</div>
+				<button type="button" class="button" id="upload-recipe">Upload Recipe</button>
 			</div>
 
 		</div>
@@ -162,13 +186,17 @@
 		</div>
 	</div>
 	<!-- end toolbar bottom -->
-
+	<script src="cordova.js"></script>
+	<script src="js/index.js"></script>
 	<script src="js/jquery-3.7.1.min.js"></script>
 	<script src="js/materialize.min.css"></script>
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-	<script src="js/swiper-bundle.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+	<script src="js/image-storage.js"></script>
+	<script src="js/add-recipe.js"></script>
 
 </body>
+
 </html>

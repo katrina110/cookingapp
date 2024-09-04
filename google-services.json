@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "696693922011",
+    "project_id": "iulam-b0aa7",
+    "storage_bucket": "iulam-b0aa7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696693922011:android:1019790c6f5aa2ad4954fe",
+        "android_client_info": {
+          "package_name": "com.cookingapp.iulam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLJLb6FgQiIgM7pzhwUQG9IS_u2qIaw8g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

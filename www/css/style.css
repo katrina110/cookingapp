@@ -201,6 +201,11 @@ form textarea::placeholder {
   text-align: center;
 }
 
+.button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .button.button-outline {
   border: 1px solid #0c9a61;
   background: transparent;
@@ -449,7 +454,6 @@ form textarea::placeholder {
   padding: 10px;
   border-radius: 7px;
   text-align: center;
-
 }
 
 .recipe-ingredients .content img {
@@ -730,12 +734,22 @@ form textarea::placeholder {
   margin-top: 15px;
 }
 
-.add-recipe .add-step form input {
+.add-recipe .add-step form input[type="file"] {
   display: none;
 }
 
+.text-btn {
+}
+.image-preview {
+  width: 100%;
+  margin: 20px auto 0;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: top;
+  max-height: 140px;
+}
 .add-recipe .add-step form label {
-  background: #ccc;
+  background: #a2a2a2;
   width: 100%;
   display: flex;
   border-radius: 7px;
@@ -746,7 +760,19 @@ form textarea::placeholder {
   align-items: center;
 }
 
+/* .add-recipe .add-step {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px dashed rgb(187, 187, 187);
+} */
+.add-recipe .add-step .step-group {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px dashed rgb(187, 187, 187);
+}
+
 .add-recipe .add-step form label ion-icon {
+  color: white;
   font-size: 22px;
 }
 

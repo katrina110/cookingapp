@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking in App</title>
+
+    <link rel="icon" href="images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:wght@300..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <div class="navbar navbar-pages">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="content">
+                        <h3><a href="index.html"><ion-icon name="chevron-back-outline"></ion-icon></a>Recipe Details
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- spacer -->
+    <div class="spacer-block spacer-top"></div>
+    <!-- end spacer -->
+
+    <!-- recipe-details -->
+    <div class="recipe-details">
+        <div class="container">
+            <div class="detail-header">
+                <img id="recipe-image" src="" alt="">
+                <ul class="rating">
+                    <li id="recipe-created-at" class="date text-small">...</li>
+                    <li>(5.0)</li>
+                    <li><ion-icon name="star"></ion-icon></li>
+                    <li><ion-icon name="star"></ion-icon></li>
+                    <li><ion-icon name="star"></ion-icon></li>
+                    <li><ion-icon name="star"></ion-icon></li>
+                    <li><ion-icon name="star"></ion-icon></li>
+                </ul>
+                <h3 id="recipe-title">...</h3>
+                <div class="details-desc">
+                    <p id="recipe-description">...</p>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="detail-reaction">
+                <div class="row">
+                    <div class="col s4">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <h6>Save</h6>
+                    </div>
+                    <div class="col s4">
+                        <ion-icon name="star-outline"></ion-icon>
+                        <h6>Rate it</h6>
+                    </div>
+                    <div class="col s4">
+                        <ion-icon name="share-social-outline"></ion-icon>
+                        <h6>Share</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="detail-ingredient">
+                <div class="block-title title-sm">
+                    <h3>Ingredient</h3>
+                </div>
+                <ul class="ingredient-list" id="ingredients">
+                </ul>
+            </div>
+            <div class="divider"></div>
+            <div class="detail-steps">
+                <div class="block-title title-sm">
+                    <h3>Instructions</h3>
+                </div>
+                <div class="swiper swiper-home">
+                    <div id="instructions" class="swiper-wrapper">
+                    </div>
+                </div>
+            </div>
+            <div class="spacer-block"></div>
+            <div style="display:none" id="#user-detail" class="detail-profile">
+                <div class="row">
+                    <div class="col s3">
+                        <img id="user-pic" src="" alt="">
+                    </div>
+                    <div class="col s5">
+                        <h4 id="user-name">...</h4>
+                    </div>
+                    <div class="col s4">
+                        <a href="" id="follow-btn" class="button">Follow</a>
+                    </div>
+                </div>
+                <div class="name-title">
+                </div>
+            </div>
+            <a id="edit-recipe" style="display: none;" href="edit-recipe.html" class="button">
+                Edit Recipe
+            </a>
+            
+            <div class="spacer-block"></div>
+            <div class="reviews">
+                <div class="block-title title-sm">
+                    <h3>Reviews</h3>
+                </div>
+                <div class="review-card">
+                    <img src="img/profile2.jpg" alt="">
+                    <div class="name-title">
+                        <h6>John Doe</h6>
+                        <p>12 hours ago</p>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum optio animi.</p>
+                </div>
+                <div class="spacer-block spacer-sm"></div>
+                <div class="review-card">
+                    <img src="img/profile3.jpg" alt="">
+                    <div class="name-title">
+                        <h6>John Doe</h6>
+                        <p>12 hours ago</p>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum optio animi.</p>
+                </div>
+                <div class="spacer-block spacer-sm"></div>
+                <div class="review-card">
+                    <img src="img/profile5.jpg" alt="">
+                    <div class="name-title">
+                        <h6>John Doe</h6>
+                        <p>12 hours ago</p>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum optio animi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end recipe-details -->
+
+    <!-- spacer -->
+    <div class="spacer-block"></div>
+    <!-- end spacer -->
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="js/materialize.min.css"></script> -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function getTimeSince(timestampInSeconds) {
+            if (timestampInSeconds < 0) {
+                throw new Error("Timestamp cannot be negative.");
+            }
+        
+            // Convert Firestore timestamp to milliseconds
+            const timestampInMillis = timestampInSeconds * 1000;
+            const now = Date.now(); // Current time in milliseconds
+        
+            // Calculate the difference
+            const differenceInMillis = now - timestampInMillis;
+        
+            // Convert difference to seconds
+            const differenceInSeconds = Math.floor(differenceInMillis / 1000);
+        
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(differenceInSeconds / (24 * 3600));
+            const hours = Math.floor((differenceInSeconds % (24 * 3600)) / 3600);
+            const minutes = Math.floor((differenceInSeconds % 3600) / 60);
+            const seconds = differenceInSeconds % 60;
+        
+            // Build the result string
+        
+            if (days > 0) {
+                return `${days} day${days > 1 ? 's' : ''} ago`;
+            }
+            if (hours > 0) {
+                return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+            }
+            if (minutes > 0) {
+                return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+            }
+            return `A few moments ago`;
+        }
+        
+
+        $(document).on('deviceready', function () {
+            const url = new URL(window.location.href);
+            const params = new URLSearchParams(url.search);
+
+            const recipeId = params.get('recipe')
+            var collection = "recipes";
+
+            window.FirebasePlugin.fetchDocumentInFirestoreCollection(
+                recipeId,
+                collection,
+                function (recipe) {
+                    const user = JSON.parse(localStorage.getItem('user'));
+                    if(user.uid == recipe.userId){
+                        $("#edit-recipe").attr('href',`edit-recipe.html?recipe=${recipeId}`).show()
+                    }else{
+                        window.fetchDocumentInFirestoreCollection(
+                            recipe.userId,
+                            'profiles',
+                            function(owner){
+                                $("#user-pic").attr('src',owner.profilePic)
+                                $("#user-name").html(owner.name)
+                                $("#follow-btn").data('id',owner.uid)
+
+                                $("#user-details").show()
+                            }
+                        )
+                    }
+                    console.log('recipe: ', recipe)
+                    $("#recipe-image").attr('src', recipe.image)
+                    $("#recipe-title").html(recipe.title)
+                    $("#recipe-created-at").html(getTimeSince(recipe.created.seconds))
+                    $("#recipe-description").html(recipe.description)
+                    for (let ingredient of recipe.ingredients) {
+                        $("#ingredients").append(`<li>${ingredient}</li>`)
+                    }
+                    var filters = [
+                        ["where", "recipeId", "==", recipeId],
+                    ];
+                    window.FirebasePlugin.fetchFirestoreCollection(
+                        'instructions',
+                        filters,
+                        function (instructions) {
+                            let index = 1;
+                            for (let instructionId in instructions) {
+                                let instruction = instructions[instructionId];
+
+                                let slide = ` <div class="swiper-slide">
+                                                    <div class="content">
+                                                        <img src="${instruction.image}" alt="">
+                                                        <h4 class="step-number">Step ${index++}: ${instruction.title}</h4>
+                                                        <p>${instruction.description}</p>
+                                                    </div>
+                                                </div>`
+                                $("#instructions").append(slide);
+                            }
+                        }
+                    )
+                },
+                function (error) {
+                    console.error("Error fetching document: " + error);
+                }
+            );
+        })
+    </script>
+</body>
+
+</html>

@@ -43,13 +43,13 @@
 				<div class="row">
 					<div class="col s4">
 						<div class="content-left">
-							<img src="img/profile5.jpg" alt="">
+							<img id="user-profile-picture" src="" alt="">
 						</div>
 					</div>
 					<div class="col s8">
 						<div class="profile-name">
-							<h3>User</h3>
-							<p class="text-small"><ion-icon name="location-outline"></ion-icon>Rizal</p>
+							<h3 id="user-name">...</h3>
+							<p class="text-small"><ion-icon name="location-outline"></ion-icon><span id="user-location">...</span></p>
 							<a href="edit-profile.html" class="button button-outline">Edit Profile</a>
 						</div>
 					</div>
@@ -57,16 +57,16 @@
 				<div class="row">
 					<div class="col s4">
 						<div class="content">
-							<h4>4</h4>
+							<h4 id="recipe-count">...</h4>
 							<p>Recipes</p>
 						</div>
 					</div>
-					<div class="col s4">
+					<!-- <div class="col s4">
 						<div class="content">
 							<h4>1</h4>
 							<p>Followers</p>
 						</div>
-					</div>
+					</div> -->
 					<div class="col s4">
 						<div class="content">
 							<h4>September, 2024</h4>
@@ -95,79 +95,8 @@
 				</div>
 
 				<div id="recipes" class="recipe-wrapper">
-					<div class="row">
-						<div class="col s6">
-							<a href="porkadobo.html">
-								<div class="recipe-item">
-									<div class="saved-symbol">
-										<ion-icon name="bookmark"></ion-icon>
-									</div>
-									<img src="img/porkadobo.jpg" alt="" />
-									<div class="recipe-caption bg-gradient">
-										<ul class="recipe-statistic">
-											<li><ion-icon name="eye"></ion-icon>50K</li>
-											<li><ion-icon name="star"></ion-icon>4.5</li>
-										</ul>
-										<p class="recipe-title">Pork Adobo</p>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col s6">
-							<a href="sinigangnababoy.html">
-								<div class="recipe-item">
-									<div class="saved-symbol">
-										<ion-icon name="bookmark"></ion-icon>
-									</div>
-									<img src="img/sinigangbaboy.jpg" alt="" />
-									<div class="recipe-caption bg-gradient">
-										<ul class="recipe-statistic">
-											<li><ion-icon name="eye"></ion-icon>50K</li>
-											<li><ion-icon name="star"></ion-icon>4.5</li>
-										</ul>
-										<p class="recipe-title">Sinigang na Baboy</p>
-									</div>
-								</div>
-							</a>
-						</div>
+					<div id="recipes-row" class="row">
 					</div>
-					<div class="row">
-						<div class="col s6">
-							<a href="chickencurry.html">
-								<div class="recipe-item">
-									<div class="saved-symbol">
-										<ion-icon name="bookmark"></ion-icon>
-									</div>
-									<img src="img/chickencurry.jpg" alt="">
-									<div class="recipe-caption bg-gradient">
-										<ul class="recipe-statistic">
-											<li><ion-icon name="eye"></ion-icon>50K</li>
-											<li><ion-icon name="star"></ion-icon>4.5</li>
-										</ul>
-										<p class="recipe-title">Chicken Curry</p>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col s6">
-							<a href="tinola.html">
-								<div class="recipe-item">
-									<div class="saved-symbol">
-										<ion-icon name="bookmark"></ion-icon>
-									</div>
-									<img src="img/Chicke Tinola.jpg" alt="">
-									<div class="recipe-caption bg-gradient">
-										<ul class="recipe-statistic">
-											<li><ion-icon name="eye"></ion-icon>50K</li>
-											<li><ion-icon name="star"></ion-icon>4.5</li>
-										</ul>
-										<p class="recipe-title">Strawberry Butter Cake</p>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-					
 				</div>
 				<div id="blog" class="blog-wrapper">
 					<div class="content">
@@ -228,7 +157,8 @@
 		</div>
 	</div>
 	<!-- end toolbar bottom -->
-
+	<script src="cordova.js"></script>
+	<script src="js/index.js"></script>
 	<script src="js/jquery-3.7.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<!-- <script src="js/materialize.min.css"></script> -->
@@ -236,8 +166,6 @@
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	<script src="js/swiper-bundle.min.js"></script>
 	<script src="js/main.js"></script>
-	<!-- <script src="js/profile.js"></script>
-	<script src="js/add-recipe.js"></script> -->
-
+	<script src="js/profile.js"></script>
 </body>
 </html>

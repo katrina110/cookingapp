@@ -1,6 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
+<widget id="com.cookingapp.iulam" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <platform name="android">
+        <resource-file src="google-services.json" target="app/google-services.json" />
+    </platform>
+    <name>iUlam</name>
     <description>Sample Apache Cordova App</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
         Apache Cordova Team
@@ -8,4 +11,8 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    
+    <!-- status bar config -->
+     <preference name="StatusBarOverlaysWebView" value="false" />
+     <preference name="StatusBarStyle" value="lightcontent" />
 </widget>

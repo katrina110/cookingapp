@@ -42,10 +42,10 @@
 			<div class="block-title title-sm">
 					<h3>Create Your Account</h3>
 				</div>
-			<form>
-				<input type="email" placeholder="Email">
-				<input type="password" placeholder="Password">
-				<div class="button">Login</div>
+			<form id="login-form">
+				<input required id="email" type="email" placeholder="Email">
+				<input required id="password" type="password" placeholder="Password">
+				<button type="submit" class="button">Login</button>
 				<div class="spacer-block spacer-sm"></div>
 				<p>Forgot the password? <a href="#">Reset password</a></p>
 				<div class="spacer-block"></div>
@@ -58,7 +58,8 @@
 	<!-- spacer -->
 	<div class="spacer-block"></div>
 	<!-- end spacer -->
-
+	<script src="cordova.js"></script>
+	<script src="js/index.js"></script>
 	<script src="js/jquery-3.7.1.min.js"></script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -67,6 +68,7 @@
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	<script src="js/swiper-bundle.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/login.js"></script>
 
 </body>
 </html>
