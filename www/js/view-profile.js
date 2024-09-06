@@ -11,7 +11,7 @@ document.addEventListener('deviceready', function () {
         $("#user-name").html(profile.name);
         $("#user-location").html(profile.location ?? '');
         $("#user-profile-picture").attr('src', profile.profilePic)
-
+        $("#followers-count").html(profile.followers?.length ?? 0)
         if (profile.followers?.includes(currentUser.uid)) {
             $("#follow-btn").html('Following').addClass('following');
         }
@@ -37,6 +37,7 @@ document.addEventListener('deviceready', function () {
                         $("#follow-btn").html('Follow').removeClass('following');
                         window.plugins.toast.showLongBottom("Unfollowed")
                         user.followers = followers;
+                        $("#followers-count").html(followers.length)
                     },
                     function (error) {
                         console.error(error);
@@ -53,6 +54,7 @@ document.addEventListener('deviceready', function () {
                     'profiles',
                     true,
                     function () {
+                        $("#followers-count").html(followers.length)
                         $("#follow-btn").html('Following').addClass('following');
                         window.plugins.toast.showLongBottom("Followed")
                     },

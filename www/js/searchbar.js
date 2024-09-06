@@ -8,7 +8,7 @@ $(document).on('deviceready', function () {
             [['where', 'userId', '==', user.uid]],
             function (documents) {
                 recentSearches = documents;
-                if(Object.keys(recentSearches).length > 0){
+                if (Object.keys(recentSearches).length > 0) {
                     $("#recent-search-list").html('');
                 }
                 for (let id in recentSearches) {
@@ -26,8 +26,9 @@ $(document).on('deviceready', function () {
             }
         )
 
-        if($('#search-input').val().length > 0){
+        if ($('#search-input').val().length > 0) {
             $("#recent-search").hide();
+            searchRecipe();
         }
 
         // $("#search-input").on('input',function(){
@@ -38,17 +39,23 @@ $(document).on('deviceready', function () {
         //     }
         // })
 
+
+
         $("#search-form").on('submit', function (e) {
             e.preventDefault();
+            searchRecipe();
+        })
+
+        function searchRecipe() {
+            const keyword = $("#search-input").val();
             $("#recent-search").hide();
             $("#no-result-text").hide()
             $("#search-preloader").show();
-
-            const keyword = $("#search-input").val();
             // fetch result
             var filters = [
                 ['orderBy', 'created', 'desc'],
             ];
+
             window.FirebasePlugin.fetchFirestoreCollection(
                 'recipes',
                 filters,
@@ -117,7 +124,7 @@ $(document).on('deviceready', function () {
                     console.error(error)
                 }
             )
-        })
+        }
     } else {
         window.location.href = "login.html";
     }
