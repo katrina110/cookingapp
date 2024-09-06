@@ -1,1 +1,1 @@
-{"plugins":["cordova-support-android-plugin","cordova-plugin-firebase-authentication","cordova-plugin-dialogs","cordova-plugin-firebasex","cordova-plugin-statusbar","cordova-plugin-firebase-files-upload"]}
+{"plugins":["cordova-support-android-plugin","cordova-plugin-firebase-authentication","cordova-plugin-dialogs","cordova-plugin-firebasex","cordova-plugin-statusbar","cordova-plugin-firebase-files-upload","cordova-plugin-x-toast"]}

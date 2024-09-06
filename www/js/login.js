@@ -1,18 +1,15 @@
 $(function () {
     function signInWithEmailPassword(email, password) {
+        $("#submit-btn").html("Logging in...").attr('disabled', true).addClass('disabled')
         cordova.plugins.firebase.auth.signInWithEmailAndPassword(email, password)
             .then(function (res) {
-                // navigator.notification.alert(
-                //     'Successfully logged in!',  // message
-                //     alertDismissed,         // callback
-                //     'Success',            // title
-                //     'Okay'                  // buttonName
-                // );
                 console.log('success')
-                window.FirebasePlugin.getCurrentUser(function(user){
-                    localStorage.setItem('user',JSON.stringify(user));
+                window.FirebasePlugin.getCurrentUser(function (user) {
+                    localStorage.setItem('user', JSON.stringify(user));
                     window.location.href = '/';
-                },function(err){
+                    $("#submit-btn").removeAttr('disabled').removeClass('disabled').html("Log In")
+                }, function (err) {
+                    $("#submit-btn").removeAttr('disabled').removeClass('disabled').html("Log In")
                     console.error(err)
                     navigator.notification.alert(
                         'Something went wrong please try again later!',  // message
@@ -23,10 +20,11 @@ $(function () {
                 })
             })
             .catch(function (error) {
+                $("#submit-btn").removeAttr('disabled').removeClass('disabled').html("Log In")
                 navigator.notification.alert(
-                    'Failed to log in!',  // message
+                    'Invalid email and password please try again!',  // message
                     null,         // callback
-                    'Error',            // title
+                    'Failed',            // title
                     'Okay'                  // buttonName
                 );
                 console.error("Error signing in:", error);
@@ -41,6 +39,7 @@ $(function () {
         try {
             signInWithEmailPassword(email, password);
         } catch (error) {
+            $("#submit-btn").removeAttr('disabled').removeClass('disabled').html("Log In")
             navigator.notification.alert(
                 'Error with code!',  // message
                 alertDismissed,         // callback

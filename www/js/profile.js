@@ -7,6 +7,7 @@ document.addEventListener('deviceready', function () {
             window.FirebasePlugin.fetchDocumentInFirestoreCollection(userId, 'profiles', function (profile) {
                 console.log("Successfully fetched document: ", profile);
                 $("#user-name").html(profile.name);
+                $("#followers-count").html(profile.followers ? profile.followers.length : 0);
                 $("#user-location").html(profile.location ?? '');
                 $("#user-profile-picture").attr('src', profile.profilePic)
 

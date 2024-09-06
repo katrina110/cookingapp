@@ -22,23 +22,31 @@
       <div class="row">
         <div class="col s9">
           <div class="content-left">
-            <div class="images">
-              <img src="img/profile5.jpg" alt="" />
+            <div class="images auth-components">
+              <img class="user-image" style="display: none;" src="" alt="" />
             </div>
             <div class="text">
-              <h4>Hello, Welcome</h4>
+              <h4 id="welcome-text">Hello, Welcome</h4>
             </div>
           </div>
         </div>
         <div class="col s3">
           <div class="content-right">
-            <a href="notifications.html"><ion-icon name="notifications"></ion-icon></a>
-            <a href="#" data-target="slide-out" class="sidenav-trigger"><ion-icon name="grid-outline"></ion-icon></a>
+            <div class="auth-components">
+              <a href="notifications.html"><ion-icon name="notifications"></ion-icon></a>
+              <a href="#" data-target="slide-out" class="sidenav-trigger"><ion-icon name="grid-outline"></ion-icon></a>
+            </div>
+            <div class="guest-components">
+              <a href="login.html"><ion-icon name="log-in-outline"></ion-icon></a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="navbar-title-big">
+      <div class="navbar-title-big auth-components">
         <h2>What do you want to cook today?</h2>
+      </div>
+      <div class="navbar-title-big center-align guest-components">
+        <h3>Join others and share your own recipe!</h3>
       </div>
     </div>
   </div>
@@ -49,9 +57,9 @@
     <div class="container">
       <div class="spacer-block"></div>
       <div class="sidebar-header">
-        <img src="img/profile5.jpg" alt="">
+        <img class="user-image" src="" alt="">
         <div class="profile-name">
-          <h3>Amasa - Recipe Mobile Template</h3>
+          <h3 class="user-name">...</h3>
         </div>
       </div>
       <div class="spacer-block"></div>
@@ -64,164 +72,41 @@
         <li><a href="add-recipe.html"><ion-icon name="add-circle-outline"></ion-icon>Add Recipe</a></li>
         <li><a href="saved-recipe.html"><ion-icon name="bookmark-outline"></ion-icon>Saved Recipe</a></li>
         <li><a href="profile.html"><ion-icon name="person-outline"></ion-icon>Profile</a></li>
-        <li><a href="#" data-target="slide-in" class="sidenav-trigger"><ion-icon name="layers-outline"></ion-icon>Other
-            Pages</a></li>
-        <li><a href="edit-profile.html"><ion-icon name="create-outline"></ion-icon>Edit Profile</a></li>
-        <li><a href="login.html"><ion-icon name="log-in-outline"></ion-icon>Login</a></li>
-        <li><a href="sign-up.html"><ion-icon name="person-add-outline"></ion-icon>Sign Up</a></li>
       </ul>
     </div>
   </div>
   <!-- end sidenav -->
 
   <!-- popular recipe -->
-  <div class="popular-recipe">
-    <div class="container">
-      <div class="swiper swiper-home">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="porkadobo.html">
-              <div class="recipe-item">
-                <div class="saved-symbol">
-                  <ion-icon name="bookmark"></ion-icon>
-                </div>
-                <div class="image-mask"></div>
-                <img src="img/porkadobo.jpg" alt="" />
-                <div class="recipe-caption">
-                  <ul class="recipe-statistic">
-                    <li><ion-icon name="eye"></ion-icon>50K</li>
-                    <li><ion-icon name="heart"></ion-icon>10K</li>
-                    <li><ion-icon name="star"></ion-icon>4.5</li>
-                  </ul>
-                  <p class="recipe-title title-white">
-                    Pork Adobo
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="sinigangnababoy.html">
-              <div class="recipe-item">
-                <div class="saved-symbol">
-                  <ion-icon name="bookmark"></ion-icon>
-                </div>
-                <div class="image-mask"></div>
-                <img src="img/sinigangbaboy.jpg" alt="" />
-                <div class="recipe-caption">
-                  <ul class="recipe-statistic">
-                    <li><ion-icon name="eye"></ion-icon>50K</li>
-                    <li><ion-icon name="heart"></ion-icon>10K</li>
-                    <li><ion-icon name="star"></ion-icon>4.5</li>
-                  </ul>
-                  <p class="recipe-title title-white">
-                    Sinigang na Baboy
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="chickencurry.html">
-              <div class="recipe-item">
-                <div class="saved-symbol">
-                  <ion-icon name="bookmark"></ion-icon>
-                </div>
-                <div class="image-mask"></div>
-                <img src="img/chickencurry.jpg" alt="" />
-                <div class="recipe-caption">
-                  <ul class="recipe-statistic">
-                    <li><ion-icon name="eye"></ion-icon>50K</li>
-                    <li><ion-icon name="heart"></ion-icon>10K</li>
-                    <li><ion-icon name="star"></ion-icon>4.5</li>
-                  </ul>
-                  <p class="recipe-title title-white">Chicken Curry</p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="tinola.html">
-              <div class="recipe-item">
-                <div class="saved-symbol">
-                  <ion-icon name="bookmark"></ion-icon>
-                </div>
-                <div class="image-mask"></div>
-                <img src="img/Chicke Tinola.jpg" alt="" />
-                <div class="recipe-caption">
-                  <ul class="recipe-statistic">
-                    <li><ion-icon name="eye"></ion-icon>50K</li>
-                    <li><ion-icon name="heart"></ion-icon>10K</li>
-                    <li><ion-icon name="star"></ion-icon>4.5</li>
-                  </ul>
-                  <p class="recipe-title title-white">
-                    Sinigang na Baboy
-                  </p>
-                </div>
-              </div>
-            </a>
+  <div class="auth-components">
+    <div class="popular-recipe">
+      <div class="container">
+        <div class="swiper swiper-home">
+          <!-- saved recipes -->
+          <div id="saved-recipes" class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="saved-recipe-placeholder shimmer"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="saved-recipe-placeholder shimmer"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="saved-recipe-placeholder shimmer"></div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="popular-recipe guest-components">
+    <div class="container">
+      <a href="sign-up.html" class="button">Create your account</a>
     </div>
   </div>
   <!-- end popular recipe -->
 
-  <!-- spacer -->
-  <div class="spacer-block"></div>
-  <!-- end spacer -->
-
   <!-- recipe from ingredients -->
-  <div class="recipe-ingredients">
-    <div class="container">
-      <div class="wrapper-inner">
-        <div class="block-title no-margin-t">
-          <h3>Best Food Influencer</h3>
-        </div>
-        <div class="row">
-          <div class="col s4">
-            <div class="content">
-              <img src="img/ninongry.jpg" alt="" />
-              <p class="second-title">Ninong Ry</p>
-            </div>
-          </div>
-          <div class="col s4">
-            <div class="content">
-              <img src="img/boylogro.jpg" alt="" />
-              <p class="second-title">Chef Boy Logro</p>
-            </div>
-          </div>
-          <div class="col s4">
-            <div class="content">
-              <img src="img/hazelchef.jpg" alt="" />
-              <p class="second-title">Hazel Cheffy</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s4">
-            <div class="content">
-              <img src="img/marvinagustin.jpg" alt="" />
-              <p class="second-title">Chef Marvin Agustin</p>
-            </div>
-          </div>
-          <div class="col s4">
-            <div class="content">
-              <img src="img/judyann.jpg" alt="" />
-              <p class="second-title">Judy Ann Santos</p>
-            </div>
-          </div>
-          <div class="col s4">
-            <div class="content">
-              <img src="img/vanjomerano.jpg" alt="" />
-              <p class="second-title">Vanjo Merano</p>
-            </div>
-          </div>
-        </div>
-        <a href="#" class="show-all-link-c">Show All</a>
-      </div>
-    </div>
-  </div>
+
   <!-- end recipe from ingredients -->
 
   <!-- spacer -->
@@ -233,80 +118,25 @@
     <div class="container">
       <div class="block-title">
         <h3>
-          Latest Recipe <a href="#" class="show-all-link-r">Show All</a>
+          Latest Recipe <a href="recipes.html" class="show-all-link-r">Show All</a>
         </h3>
       </div>
-      <div class="row">
+      <div class="row" id="latest-recipes">
         <div class="col s6">
-          <a href="porkadobo.html">
-            <div class="recipe-item">
-              <div class="saved-symbol">
-                <ion-icon name="bookmark"></ion-icon>
-              </div>
-              <img src="img/porkadobo1.jpg" alt="" />
-              <div class="recipe-caption bg-gradient">
-                <ul class="recipe-statistic">
-                  <li><ion-icon name="eye"></ion-icon>50K</li>
-                  <li><ion-icon name="star"></ion-icon>4.5</li>
-                </ul>
-                <p class="recipe-title">Pork Adobo</p>
-              </div>
-            </div>
-          </a>
+          <div class="recipe-item-placeholder shimmer"></div>
         </div>
         <div class="col s6">
-          <a href="sinigangnababoy.html">
-            <div class="recipe-item">
-              <div class="saved-symbol">
-                <ion-icon name="bookmark"></ion-icon>
-              </div>
-              <img src="img/sinigangbaboy.jpg" alt="" />
-              <div class="recipe-caption bg-gradient">
-                <ul class="recipe-statistic">
-                  <li><ion-icon name="eye"></ion-icon>50K</li>
-                  <li><ion-icon name="star"></ion-icon>4.5</li>
-                </ul>
-                <p class="recipe-title">Sinigang na Baboy</p>
-              </div>
-            </div>
-          </a>
+          <div class="recipe-item-placeholder shimmer"></div>
+        </div>
+        <div class="col s6">
+          <div class="recipe-item-placeholder shimmer"></div>
+        </div>
+        <div class="col s6">
+          <div class="recipe-item-placeholder shimmer"></div>
         </div>
       </div>
-      <div class="row">
-        <div class="col s6">
-          <a href="chickencurry.html">
-            <div class="recipe-item">
-              <div class="saved-symbol">
-                <ion-icon name="bookmark"></ion-icon>
-              </div>
-              <img src="img/chickencurry.jpg" a7lt="" />
-              <div class="recipe-caption bg-gradient">
-                <ul class="recipe-statistic">
-                  <li><ion-icon name="eye"></ion-icon>50K</li>
-                  <li><ion-icon name="star"></ion-icon>4.5</li>
-                </ul>
-                <p class="recipe-title">Chicken Curry</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col s6">
-          <a href="tinola.html">
-            <div class="recipe-item">
-              <div class="saved-symbol">
-                <ion-icon name="bookmark"></ion-icon>
-              </div>
-              <img src="img/Chicke Tinola.jpg" alt="" />
-              <div class="recipe-caption bg-gradient">
-                <ul class="recipe-statistic">
-                  <li><ion-icon name="eye"></ion-icon>50K</li>
-                  <li><ion-icon name="star"></ion-icon>4.5</li>
-                </ul>
-                <p class="recipe-title">Chicken Tinola</p>
-              </div>
-            </div>
-          </a>
-        </div>
+      <div id="recipes-empty-text" style="display: none;">
+        <p>No recipes posted yet.</p>
       </div>
     </div>
   </div>
@@ -383,4 +213,8 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+
+  </script>
+  <script src="js/home.js"></script>
 </body>

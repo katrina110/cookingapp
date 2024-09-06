@@ -19,6 +19,7 @@
     "cordova-plugin-firebase-authentication": "^7.0.1",
     "cordova-plugin-firebasex": "^16.5.0",
     "cordova-plugin-statusbar": "^4.0.0",
+    "cordova-plugin-x-toast": "^2.7.3",
     "cordova-support-android-plugin": "~2.0.4"
   },
   "cordova": {
@@ -63,7 +64,8 @@
         "ANDROID_FIREBASE_PERF_GRADLE_PLUGIN_VERSION": "1.4.2",
         "ANDROID_GRPC_OKHTTP": "1.46.0"
       },
-      "cordova-plugin-statusbar": {}
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-x-toast": {}
     }
   },
   "dependencies": {

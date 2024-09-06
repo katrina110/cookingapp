@@ -1,5 +1,4 @@
 $(function () {
-    console.log('user: ', localStorage.getItem('user'))
     var stepsCount = $(".step-group").length;
     $(".image-input").on('change', function (e) {
         let imgPreview = $($(this).data('img-preview'));
@@ -165,13 +164,7 @@ $(function () {
                     ...step
                 };
                 window.FirebasePlugin.addDocumentToFirestoreCollection(instructionDoc, 'instructions', true, function () {
-                    // successfully added instructions
-                    navigator.notification.alert(
-                        'You successfully uploaded your recipe!',  // message
-                        () => { window.location.href = '/profile.html'; },
-                        'Great',            // title
-                        'Okay'
-                    )
+
                 }, function (err) {
                     console.error(err);
                     window.FirebasePlugin.deleteDocumentFromFirestoreCollection(recipeId, 'recipes', function () {
@@ -190,9 +183,13 @@ $(function () {
                             'Error',            // title
                             'Okay'                  // buttonName
                         );
+                        return;
                     });
                 });
             }
+            // successfully added instructions
+            window.plugins.toast.showLongBottom("Successfully added recipe");
+            window.location.href = "profile.html";
         })
     })
 })

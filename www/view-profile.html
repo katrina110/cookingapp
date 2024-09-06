@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amasa - Food Recipe Mobile Template</title>
+
+    <link rel="icon" href="images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:wght@300..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <div class="navbar navbar-pages">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="content">
+                        <h3><a href="javascript:history.back()"><ion-icon name="chevron-back-outline"></ion-icon></a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- spacer -->
+    <div class="spacer-block spacer-top"></div>
+    <!-- end spacer -->
+
+    <!-- profile -->
+    <div class="profile">
+        <div class="container">
+            <div class="profile-header">
+                <div class="row">
+                    <div class="col s4">
+                        <div class="content-left">
+                            <img id="user-profile-picture" src="img/gray.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col s8">
+                        <div class="profile-name">
+                            <h3 id="user-name">...</h3>
+                            <p class="text-small"><ion-icon name="location-outline"></ion-icon><span
+                                    id="user-location">...</span></p>
+                            <button type="button" id="follow-btn" class="button">Follow</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <div class="content">
+                            <h4 id="recipe-count">...</h4>
+                            <p>Recipes</p>
+                        </div>
+                    </div>
+                    <!-- <div class="col s4">
+						<div class="content">
+							<h4>1</h4>
+							<p>Followers</p>
+						</div>
+					</div> -->
+                    <div class="col s6">
+                        <div class="content">
+                            <h4>September, 2024</h4>
+                            <p>Joined</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- divider -->
+            <div class="divider"></div>
+            <!-- end divider -->
+
+            <div id="recipes" class="recipe-wrapper">
+                <h4 class="green-text">
+                    Recipes
+                </h4>
+                <br>
+                <div id="recipes-row" class="row">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end profile -->
+
+    <!-- spacer -->
+    <div class="spacer-block spacer-bottom"></div>
+    <!-- end spacer -->
+
+    <script src="cordova.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="js/materialize.min.css"></script> -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/view-profile.js"></script>
+</body>
+
+</html>

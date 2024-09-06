@@ -255,7 +255,8 @@ form textarea::placeholder {
 
 .navbar .content-left .images img {
   width: 45px;
-  height: auto;
+  height: 45px;
+  object-fit: cover;
   border-radius: 50%;
   display: block;
 }
@@ -297,7 +298,7 @@ form textarea::placeholder {
 
 .sidenav .sidebar-header img {
   width: 50px;
-  height: auto;
+  height: 50px;
   border-radius: 50%;
   float: left;
   margin-right: 15px;
@@ -330,6 +331,35 @@ form textarea::placeholder {
   position: relative;
   z-index: 9;
 }
+.recipe-item-placeholder {
+  width: 100%;
+  height: 140px;
+  border-radius: 14px;
+  background: rgb(175, 175, 175);
+  margin: 10px;
+}
+
+.shimmer {
+  background: linear-gradient(
+    to right,
+    #f0f0f0 0%,
+    #e0e0e0 20%,
+    #f0f0f0 40%,
+    #f0f0f0 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3.5s linear infinite;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
 
 .recipe-item .recipe-caption.bg-gradient {
   background: linear-gradient(#e8e8e8, rgba(210, 210, 210, 0));
@@ -338,7 +368,10 @@ form textarea::placeholder {
   transform: translateY(-30px);
   margin-bottom: -30px;
 }
-
+.delete-btn {
+  border: none !important;
+  margin: 10px 0;
+}
 .recipe-item .recipe-caption .recipe-statistic {
   margin-top: 10px;
   margin-bottom: 7px;
@@ -786,8 +819,14 @@ form textarea::placeholder {
 }
 
 .profile .profile-header img {
-  width: 100%;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
+  object-fit: cover;
+}
+
+img{
+  object-fit: cover !important;
 }
 
 .profile .profile-header .profile-name h3 {
@@ -937,7 +976,10 @@ form textarea::placeholder {
 .recipe-details .detail-profile img {
   border-radius: 50%;
   display: block;
-  width: 100%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover
+  ;
 }
 
 .recipe-details .detail-profile h4 {
@@ -1033,6 +1075,8 @@ form textarea::placeholder {
 /* edit profile */
 .edit-profile .edit-photo img {
   width: 100px;
+  height: 100px;
+  object-fit: cover;
   margin: auto;
   border-radius: 50%;
 }
@@ -1098,4 +1142,82 @@ form textarea::placeholder {
   background: #fff;
   color: #000;
   border-color: #fff;
+}
+
+.ingredient-group {
+  display: flex;
+}
+
+.ingredient-group .action {
+  width: 50px;
+  height: 42px;
+  box-sizing: border-box;
+  color: white;
+  border: 1px solid rgb(218, 218, 218);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ingredient-group .edit-ingredient-btn {
+  background: #0c9a61;
+}
+.ingredient-group .delete-ingredient-btn {
+  background: #af0f0f;
+}
+
+.ingredient-group .action.disabled {
+  background: rgb(202, 202, 202) !important;
+}
+
+.form-group {
+  border: 1px dashed rgb(176, 176, 176);
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.auth-components {
+  display: none;
+}
+
+.guest-components {
+  display: none;
+}
+.saved-recipe-placeholder {
+  width: 100%;
+  height: 250px;
+  border-radius: 14px;
+  margin: 10px;
+}
+
+.button.secondary{
+  background: rgb(158, 158, 158);
+  border: none !important;
+}
+
+#password-form input{
+  margin-bottom: 2px;
+}
+
+.control-group{
+  margin-bottom: 10px;
+}
+.error-text{
+  color: red;
+  font-size: 0.9rem;
+}
+
+form input.error{
+  border: 1px solid red !important;
+  color: red;
+}
+
+form input.disabled{
+  background: rgb(255, 255, 255) !important;
+}
+
+button.following{
+  background: #2b2b2b !important;
+  color: white;
 }

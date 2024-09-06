@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking in App</title>
+
+    <link rel="icon" href="images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:wght@300..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <div class="navbar navbar-pages">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="content">
+                        <h3><a href="javascript:history.back()"><ion-icon name="chevron-back-outline"></ion-icon></a>Edit
+                            Ingredient
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- spacer -->
+    <div class="spacer-block spacer-top"></div>
+    <!-- end spacer -->
+
+    <!-- add recipe -->
+    <div class="add-recipe">
+        <div class="container">
+            <form id="form">
+                <div class="add-title-recipe">
+                    <div class="block-title title-sm">
+                        <h3>Ingredient</h3>
+                    </div>
+                    <input required id="ingredient" type="text" placeholder="">
+                </div>
+                <!-- spacer -->
+                <div class="spacer-block"></div>
+                <!-- end spacer -->
+                <div class="button-wrapper">
+                    <button type="submit" class="button" id="submit-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- end add recipe -->
+
+    <!-- spacer -->
+    <div class="spacer-block spacer-bottom"></div>
+    <!-- end spacer -->
+
+    <!-- end toolbar bottom -->
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/materialize.min.css"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <script src="js/image-storage.js"></script>
+    <script src="js/edit-ingredient.js"></script>
+
+</body>
+
+</html>

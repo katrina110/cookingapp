@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +10,22 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:wght@300..900&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:wght@300..900&display=swap"
+		rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 	<link rel="stylesheet" href="css/swiper-bundle.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 	<!-- navbar -->
 	<div class="navbar navbar-pages navbar-searchpage">
 		<div class="container">
-			<form>
-				<input type="text" placeholder="Search recipe">
+			<form id="search-form">
+				<input required id="search-input" type="text" placeholder="Search recipe">
 			</form>
 		</div>
 	</div>
@@ -33,24 +36,47 @@
 	<!-- end spacer -->
 
 	<!-- recent search -->
-	<div class="recent-search">
+	<div class="recent-search" id="recent-search">
 		<div class="container">
 			<div class="block-title title-sm">
 				<h3>Recent Search</h3>
 			</div>
 			<div class="content">
-				<ul>
-					<li><a href="porkadobo.html"><ion-icon name="time-outline"></ion-icon>Pork Adobo</a></li>
-					<li><a href="sinigangnababoy.html"><ion-icon name="time-outline"></ion-icon>Sinigang na Baboy</a></li>
-					<li><a href="chickencurry.html"><ion-icon name="time-outline"></ion-icon>Chicken Curry</a></li>
-					<li><a href="tinola.html"><ion-icon name="time-outline"></ion-icon>Chicken Tinola</a></li>
-
+				<ul id="recent-search-list">
+					<li>No recent searches.</li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	<!-- end recent search -->
-
+	<!-- spacer -->
+	<div class="spacer-block"></div>
+	<!-- end spacer -->
+	<!-- search result -->
+	<div class="latest-recipe">
+		<div class="container">
+			<div class="row" id="search-result">
+			</div>
+			<p style="display: none;" id="no-result-text" class="center-align">No result found.</p>
+			<div style="display: none;" class="row" id="search-preloader">
+				<div class="col s6">
+					<div class="recipe-item-placeholder shimmer"></div>
+				</div>
+				<div class="col s6">
+					<div class="recipe-item-placeholder shimmer"></div>
+				</div>
+				<div class="col s6">
+					<div class="recipe-item-placeholder shimmer"></div>
+				</div>
+				<div class="col s6">
+					<div class="recipe-item-placeholder shimmer"></div>
+				</div>
+			</div>
+			<div id="recipes-empty-text" style="display: none;">
+				<p>No recipes posted yet.</p>
+			</div>
+		</div>
+	</div>
 	<!-- spacer -->
 	<div class="spacer-block"></div>
 	<!-- end spacer -->
@@ -88,13 +114,15 @@
 		</div>
 	</div>
 	<!-- end toolbar bottom -->
-
+	<script src="cordova.js"></script>
 	<script src="js/jquery-3.7.1.min.js"></script>
+	<script src="js/index.js"></script>
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	<script src="js/swiper-bundle.min.js"></script>
 	<script src="js/materialize.min.css"></script>
 	<script src="js/main.js"></script>
-
+	<script src="js/searchbar.js"></script>
 </body>
+
 </html>
