@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,21 +10,27 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:wght@300..900&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:wght@300..900&display=swap"
+		rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 	<link rel="stylesheet" href="css/swiper-bundle.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 	<!-- navbar -->
-	<div class="navbar">
+	<div class="navbar navbar-pages">
 		<div class="container">
 			<div class="row">
 				<div class="col s12">
-					<div class="navbar-title-sm">
+					<div class="content profile-nav">
 						<h3>Profile</h3>
+						<button class="logout-btn" type="button" id="logout-btn"> 
+							Logout
+						</button>
 					</div>
 				</div>
 			</div>
@@ -49,7 +55,8 @@
 					<div class="col s8">
 						<div class="profile-name">
 							<h3 id="user-name">...</h3>
-							<p class="text-small"><ion-icon name="location-outline"></ion-icon><span id="user-location">...</span></p>
+							<p class="text-small"><ion-icon name="location-outline"></ion-icon><span
+									id="user-location">...</span></p>
 							<a href="edit-profile.html" class="button button-outline">Edit Profile</a>
 						</div>
 					</div>
@@ -148,4 +155,5 @@
 	<script src="js/main.js"></script>
 	<script src="js/profile.js"></script>
 </body>
+
 </html>
