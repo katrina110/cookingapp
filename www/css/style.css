@@ -825,7 +825,7 @@ form textarea::placeholder {
   object-fit: cover;
 }
 
-img{
+img {
   object-fit: cover !important;
 }
 
@@ -978,8 +978,7 @@ img{
   display: block;
   width: 50px;
   height: 50px;
-  object-fit: cover
-  ;
+  object-fit: cover;
 }
 
 .recipe-details .detail-profile h4 {
@@ -1191,33 +1190,91 @@ img{
   margin: 10px;
 }
 
-.button.secondary{
+.button.secondary {
   background: rgb(158, 158, 158);
   border: none !important;
 }
 
-#password-form input{
+#password-form input {
   margin-bottom: 2px;
 }
 
-.control-group{
+.control-group {
   margin-bottom: 10px;
 }
-.error-text{
+.error-text {
   color: red;
   font-size: 0.9rem;
 }
 
-form input.error{
+form input.error {
   border: 1px solid red !important;
   color: red;
 }
 
-form input.disabled{
+form input.disabled {
   background: rgb(255, 255, 255) !important;
 }
 
-button.following{
+button.following {
   background: #2b2b2b !important;
   color: white;
+}
+
+.ratings-radio-group {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  margin-top: 15px;
+}
+.ratings-radio-group .radio-group {
+  flex: 1;
+  display: flex;
+}
+.ratings-radio-group label {
+  width: 100%;
+  font-size: 1.2rem;
+  color: #000;
+  border: 1px solid gray;
+  padding: 14px 16px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ratings-radio-group .radio-group input{
+}
+
+
+.radio-group input:checked + label {
+  color: white !important;
+  font-weight: bold;
+  background: #ffa500;
+  border: 1px solid #ffa500 !important;
+}
+#rating-form-wrapper{
+  border: 1px dashed gray;
+  border-radius: 7px;
+  padding: 20px;
+}
+#rating-form {
+  display: block !important;
+  height: auto !important;
+}
+.rating-stars{
+  display: flex;
+  align-items:  center;
+  column-gap: 5px;
+}
+
+.rating-stars .star.filled{
+  color: #ffa500;
+}
+
+#btn-rate{
+  display: flex;
+  background: white !important;
+  border: none;
+  width: max-content;
 }

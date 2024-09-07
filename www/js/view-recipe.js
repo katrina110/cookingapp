@@ -45,6 +45,7 @@ $(document).on('deviceready', function () {
     var recipe = null;
     var savedRecipeId = null;
     var owner = null;
+    var reviews = null;
 
     $("#delete-recipe").on('click', function (e) {
         const deleteRecipe = () => {
@@ -94,6 +95,57 @@ $(document).on('deviceready', function () {
         collection,
         function (document) {
             recipe = document;
+
+            // fetch reviews
+            window.FirebasePlugin.fetchFirestoreCollection(
+                'reviews',
+                [['where', 'recipeId', '==', recipeId]],
+                function (collection) {
+                    if (Object.keys(collection).length > 0) {
+                        $("#reviews").html('')
+                        reviews = collection
+                    }
+                    showTotalRating();
+                    for (let reviewId in collection) {
+                        let review = collection[reviewId];
+                        if (review.userId == user.uid) {
+                            $("#btn-rate").attr('disabled', true).find('.text').addClass('disabled').html("Rated")
+                        }
+                        window.FirebasePlugin.fetchDocumentInFirestoreCollection(
+                            review.userId,
+                            'profiles',
+                            function (userProfile) {
+                                let item = ` <div class="review-card">
+                                                <img src="${userProfile.profilePic}" alt="">
+                                                <div class="name-title">
+                                                    <h6>${userProfile.name}</h6>
+                                                    <p>${getTimeSince(review.created.seconds)}</p>
+                                                </div>
+                                                <ul class="rating-stars">
+                                                    <li>(${review.rating})</li>
+                                                    <li class="star ${review.rating >= 1 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+                                                    <li class="star ${review.rating >= 2 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+                                                    <li class="star ${review.rating >= 3 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+                                                    <li class="star ${review.rating >= 4 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+                                                    <li class="star ${review.rating >= 5 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+                                                </ul>
+                                                <p>${review.comment}</p>
+                                            </div>
+                                            <div class="spacer-block spacer-sm"></div>`
+                                $("#reviews").append(item)
+                            },
+                            function (err) {
+                                console.error(err);
+                            }
+                        )
+                    }
+
+                },
+                function (error) {
+                    console.error(error);
+                }
+            )
+
             if (user && user.uid == recipe.userId) {
                 $("#edit-recipe").attr('href', `edit-recipe.html?recipe=${recipeId}`).show()
                 $("#delete-recipe").show()
@@ -252,4 +304,113 @@ $(document).on('deviceready', function () {
             }
         }
     })
+    $("#btn-rate").on('click', function (e) {
+        $("#rating-form-wrapper").show();
+        $('html, body').scrollTop($("#rating-form").offset().top);
+    })
+    $("#rating-form").on('submit', function (e) {
+        e.preventDefault()
+        let rating = $('input[name="rating"]:checked').val();
+        let comment = $("#comment").val();
+
+        $("#rating-form").find('button').attr('disabled', true).addClass('disabled').html("Submitting...")
+        window.FirebasePlugin.addDocumentToFirestoreCollection(
+            {
+                rating,
+                comment,
+                userId: user.uid,
+                recipeId
+            },
+            'reviews',
+            true,
+            function (reviewId) {
+                window.FirebasePlugin.fetchDocumentInFirestoreCollection(
+                    user.uid,
+                    'profiles',
+                    function (profile) {
+                        $("#rating-form").find('button').removeAttr('disabled').removeClass('disabled').html("Submit")
+                        $("#rating-form-wrapper").hide();
+
+                        let item = ` <div class="review-card">
+                                            <img src="${profile.profilePic}" alt="">
+                                            <div class="name-title">
+                                                <h6>${profile.name}</h6>
+                                                <p>A few moments ago</p>
+                                            </div>
+                                            <ul class="rating-stars">
+                                                <li>(${rating})</li>
+                                                <li class="star ${rating >= 1 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+                                                <li class="star ${rating >= 2 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+                                                <li class="star ${rating >= 3 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+                                                <li class="star ${rating >= 4 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+                                                <li class="star ${rating >= 5 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+                                            </ul>
+                                            <p>${comment}</p>
+                                        </div>
+                                        <div class="spacer-block spacer-sm"></div>`
+                        if (!reviews) {
+                            $("#reviews").html('');
+                        }
+                        $("#reviews").append(item)
+
+                        $("#btn-rate").attr('disabled', true).find('.text').addClass('disabled').html("Rated")
+
+                        reviews = reviews ? {
+                            ...reviews,
+                            reviewId: {
+                                rating,
+                                comment,
+                                userId: user.uid,
+                                recipeId
+                            }
+                        } : {
+                            reviewId: {
+                                rating,
+                                comment,
+                                userId: user.uid,
+                                recipeId
+                            }
+                        }
+
+                        showTotalRating();
+
+
+                    },
+                    function (err) {
+                        console.error(err);
+                    }
+                )
+
+            },
+            function (err) {
+                console.error(err);
+            }
+        )
+    })
+
+    function showTotalRating() {
+        if (reviews) {
+            var totalRating = 0;
+
+            for (let id in reviews) {
+                totalRating += Number(reviews[id].rating);
+            }
+            // set total rating
+            totalRating = (totalRating / Object.keys(reviews).length).toFixed(1) ?? 0
+
+            if (totalRating && totalRating > 0) {
+                $("#total-rating").html(`<li>(${totalRating})</li>
+             <li class="star ${totalRating >= 1 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+              <li class="star ${totalRating >= 2 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+              <li class="star ${totalRating >= 3 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+              <li class="star ${totalRating >= 4 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+              <li class="star ${totalRating >= 5 ? 'filled' : ''}"><ion-icon name="star"></ion-icon></li>
+                  `)
+            } else {
+                $("#total-rating").html("<p>Not rated</p>")
+            }
+        } else {
+            $("#total-rating").html("<p>Not rated</p>")
+        }
+    }
 })

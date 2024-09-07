@@ -47,12 +47,9 @@
                 <img id="recipe-image" src="" alt="">
                 <ul class="rating">
                     <li id="recipe-created-at" class="date text-small">...</li>
-                    <li>(5.0)</li>
-                    <li><ion-icon name="star"></ion-icon></li>
-                    <li><ion-icon name="star"></ion-icon></li>
-                    <li><ion-icon name="star"></ion-icon></li>
-                    <li><ion-icon name="star"></ion-icon></li>
-                    <li><ion-icon name="star"></ion-icon></li>
+                </ul>
+                <ul class="rating-stars" id="total-rating">
+                    
                 </ul>
                 <h3 id="recipe-title">...</h3>
                 <div class="details-desc">
@@ -62,14 +59,14 @@
             <div class="divider"></div>
             <div id="reaction-group" style="display: none;" class="detail-reaction">
                 <div class="row">
-                    <div id="btn-save" class="col s4">
+                    <div id="btn-save" class="col s6">
                         <ion-icon name="bookmark-outline"></ion-icon>
                         <h6 class="text">Save</h6>
                     </div>
-                    <div id="btn-rate" class="col s4">
+                    <button type="button" id="btn-rate" class="col s6">
                         <ion-icon name="star-outline"></ion-icon>
-                        <h6>Rate it</h6>
-                    </div>
+                        <h6 class="text">Rate it</h6>
+                    </button>
                     <!-- <div class="col s4">
                         <ion-icon name="share-social-outline"></ion-icon>
                         <h6>Share</h6>
@@ -118,37 +115,52 @@
             <button id="delete-recipe" style="display: none;" href="edit-recipe.html" class="button delete-btn red">
                 Delete Recipe
             </button>
+            <div class="spacer-block"></div>
 
             <div class="spacer-block"></div>
             <div class="reviews">
                 <div class="block-title title-sm">
                     <h3>Reviews</h3>
                 </div>
-                <div class="review-card">
-                    <img src="img/profile2.jpg" alt="">
-                    <div class="name-title">
-                        <h6>John Doe</h6>
-                        <p>12 hours ago</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum optio animi.</p>
+                <div id="reviews">
+                    <p>No reviews.</p>
                 </div>
-                <div class="spacer-block spacer-sm"></div>
-                <div class="review-card">
-                    <img src="img/profile3.jpg" alt="">
-                    <div class="name-title">
-                        <h6>John Doe</h6>
-                        <p>12 hours ago</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum optio animi.</p>
-                </div>
-                <div class="spacer-block spacer-sm"></div>
-                <div class="review-card">
-                    <img src="img/profile5.jpg" alt="">
-                    <div class="name-title">
-                        <h6>John Doe</h6>
-                        <p>12 hours ago</p>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum optio animi.</p>
+                <div class="spacer-block"></div>
+                <div style="display: none;" id="rating-form-wrapper">
+                    <form id="rating-form">
+                        <h5>Post your review</h5>
+                        <div class="ratings-radio-group">
+                            <div class="radio-group">
+                                <input checked required id="rating-1" class="ratings-radio" value="1" type="radio"
+                                    name="rating">
+                                <label for="rating-1">1</label>
+                            </div>
+                            <div class="radio-group">
+                                <input required id="rating-2" class="ratings-radio" value="2" type="radio"
+                                    name="rating">
+                                <label for="rating-2">2</label>
+                            </div>
+                            <div class="radio-group">
+                                <input required id="rating-3" class="ratings-radio" value="3" type="radio"
+                                    name="rating">
+                                <label for="rating-3">3</label>
+                            </div>
+                            <div class="radio-group">
+                                <input required id="rating-4" class="ratings-radio" value="4" type="radio"
+                                    name="rating">
+                                <label for="rating-4">4</label>
+                            </div>
+                            <div class="radio-group">
+                                <input required id="rating-5" class="ratings-radio" value="5" type="radio"
+                                    name="rating">
+                                <label for="rating-5">5</label>
+                            </div>
+                        </div>
+                        <br>
+                        <textarea placeholder="Review" id="comment"></textarea>
+                        <br><br>
+                        <button type="submit" class="button">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -169,7 +181,6 @@
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/view-recipe.js">
-
     </script>
 </body>
 
