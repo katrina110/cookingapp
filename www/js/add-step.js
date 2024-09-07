@@ -28,16 +28,10 @@ $(document).on("deviceready", function (e) {
         $("#submit-btn").attr('disabled', true).addClass('disabled').html('Saving...');
         $("button").attr('disabled', true).addClass('disabled')
         $("a").attr('disabled', true).addClass('disabled')
-        var recipeImage = '';
+        var image = '';
         try {
             // upload recipe image
-            recipeImage = await uploadImage($('#image')[0].files[0]);
-
-            // upload steps images
-            for (let i = 0; i < steps.length; i++) {
-                let imgUrl = await uploadImage(steps[i].image);
-                steps[i] = { ...steps[i], image: imgUrl };
-            }
+            image = await uploadImage($('#image')[0].files[0]);
 
         } catch (error) {
             console.error(error)
@@ -47,7 +41,8 @@ $(document).on("deviceready", function (e) {
         let newStep = {
             title: $("#title").val(),
             description: $("#description").val(),
-            image:recipeImage,
+            image,
+            recipeId
         }
         window.FirebasePlugin.addDocumentToFirestoreCollection(
             newStep,

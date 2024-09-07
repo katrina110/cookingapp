@@ -28,7 +28,7 @@ $(document).on("deviceready", function (e) {
 
     $("#form").on('submit', async function (e) {
         e.preventDefault();
-        if(!$('#image')[0].files || $('#image')[0].files.length == 0){
+        if((!$('#image')[0].files || $('#image')[0].files.length == 0) && $("#image-preview").attr('src') == ''){
             window.plugins.toast.showLongBottom("Please select an image");
             return;
         }
@@ -38,17 +38,11 @@ $(document).on("deviceready", function (e) {
 
         // get values
 
-        var recipeImage = instruction.image;
+        var image = instruction.image;
         if ($("#image")[0].files.length > 0) {
             try {
                 // upload recipe image
-                recipeImage = await uploadImage($('#image')[0].files[0]);
-
-                // upload steps images
-                for (let i = 0; i < steps.length; i++) {
-                    let imgUrl = await uploadImage(steps[i].image);
-                    steps[i] = { ...steps[i], image: imgUrl };
-                }
+                image = await uploadImage($('#image')[0].files[0]);
 
             } catch (error) {
                 console.error(error)
@@ -59,7 +53,7 @@ $(document).on("deviceready", function (e) {
         let newStep = {
             title: $("#title").val(),
             description: $("#description").val(),
-            image: recipeImage,
+            image,
         }
         window.FirebasePlugin.updateDocumentInFirestoreCollection(
             instructionId,
