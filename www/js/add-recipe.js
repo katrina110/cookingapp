@@ -44,6 +44,15 @@ $(function () {
             // console.log('clicked: ', )
             $(this).parent().find('input.image-input').trigger('click')
         })
+        $(".image-input").on('change', function (e) {
+            let imgPreview = $($(this).data('img-preview'));
+            if (e.target.files.length > 0) {
+                let file = e.target.files[0]
+                imgPreview.attr('src', URL.createObjectURL(file));
+            } else {
+                imgPreview.attr('src', '');
+            }
+        })
 
         $('.btn-remove-step').on('click', function (e) {
             $(this).parent().parent().prev('.divider').remove()
