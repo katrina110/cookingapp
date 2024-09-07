@@ -11,7 +11,7 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
-    <icon src="www/img/app logo.jpg" />
+    <icon src="www/img/app logo.png" />
     
     <!-- status bar config -->
      <preference name="StatusBarOverlaysWebView" value="false" />
