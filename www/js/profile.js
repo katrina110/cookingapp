@@ -60,4 +60,32 @@ document.addEventListener('deviceready', function () {
         window.location.href = "/login.html"
     })
 
+    $("#logout-btn").on('click', function (e) {
+        // sign out user
+        navigator
+            .notification
+            .confirm(
+                'Log out of your account?',
+                (choice) => {
+                    if (choice == 1) {
+                        window.FirebasePlugin.signOutUser(
+                            function () {
+                                localStorage.removeItem('user');
+                                window.location.href = "index.html";
+                            },
+                            function(err){
+                                console.error(err)
+                                window.plugins.toast.showLongBottom('Something went wrong please try again later!');
+                            }
+                        )
+                    }
+                },
+                'Confirm',
+                [
+                    'Confirm',
+                    'Cancel'
+                ]
+            )
+    })
+
 }, false);
