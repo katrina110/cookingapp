@@ -28,7 +28,10 @@ $(document).on("deviceready", function (e) {
 
     $("#form").on('submit', async function (e) {
         e.preventDefault();
-
+        if(!$('#image')[0].files || $('#image')[0].files.length == 0){
+            window.plugins.toast.showLongBottom("Please select an image");
+            return;
+        }
         $("#submit-btn").attr('disabled', true).addClass('disabled').html('Saving...');
         $("button").attr('disabled', true).addClass('disabled')
         $("a").attr('disabled', true).addClass('disabled')

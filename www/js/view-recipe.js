@@ -35,8 +35,11 @@ function getTimeSince(timestampInSeconds) {
 
 
 $(document).on('deviceready', function () {
+    if(localStorage.getItem('user') == null){
+        window.location.href = "login.html"
+    }
     const user = JSON.parse(localStorage.getItem('user'));
-
+    
     const url = new URL(window.location.href);
     const params = new URLSearchParams(url.search);
 
