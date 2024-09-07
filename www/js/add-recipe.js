@@ -1,5 +1,5 @@
 $(function () {
-    var stepsCount = $(".step-group").length;
+    var stepsCount = $(".step-group").length ?? 0;
     $(".image-input").on('change', function (e) {
         let imgPreview = $($(this).data('img-preview'));
         if (e.target.files.length > 0) {
@@ -39,6 +39,11 @@ $(function () {
 
         $('#steps').append('<div class="divider"></div>');
         $('#steps').append(step);
+
+        $(".image-input-label").on('click', function (e) {
+            // console.log('clicked: ', )
+            $(this).parent().find('input.image-input').trigger('click')
+        })
 
         $('.btn-remove-step').on('click', function (e) {
             $(this).parent().parent().prev('.divider').remove()
