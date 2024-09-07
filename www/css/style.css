@@ -89,7 +89,7 @@ a.button {
   float: right;
   font-size: 15px;
   font-weight: 600;
-  color: #0c9a61;
+  color: #D76585;
 }
 
 .show-all-link-c {
@@ -97,7 +97,7 @@ a.button {
   justify-content: center;
   font-size: 15px;
   font-weight: 600;
-  color: #0c9a61;
+  color: #D76585;
 }
 
 .no-margin-t {
@@ -188,7 +188,7 @@ form textarea::placeholder {
 
 /* button */
 .button {
-  background: #0c9a61;
+  background: #D76585;
   border-radius: 30px;
   padding: 0 12px;
   line-height: 38px;
@@ -197,7 +197,7 @@ form textarea::placeholder {
   color: #fff;
   border: 0;
   width: 100%;
-  border: 1px solid #0c9a61;
+  border: 1px solid #D76585;
   text-align: center;
 }
 
@@ -207,7 +207,7 @@ form textarea::placeholder {
 }
 
 .button.button-outline {
-  border: 1px solid #0c9a61;
+  border: 1px solid #D76585;
   background: transparent;
   color: #000;
 }
@@ -618,12 +618,12 @@ form textarea::placeholder {
 }
 
 .toolbar .toolbar-bottom .toolbar-item .toolbar-link.toolbar-link-active {
-  color: #0c9a61;
-  border-top: 2px solid #0c9a61;
+  color: #D76585;
+  border-top: 2px solid #D76585;
 }
 
 .toolbar .toolbar-bottom .toolbar-item.toolbar-add a ion-icon {
-  color: #0c9a61;
+  color: #D76585;
 }
 
 /* recent search */
@@ -710,24 +710,24 @@ form textarea::placeholder {
 }
 
 .tabs .tab a.active {
-  color: #0c9a61;
+  color: #D76585;
 }
 
 .tabs .tab a:focus {
-  color: #0c9a61;
+  color: #D76585;
 }
 
 .tabs .tab a:focus.active {
-  color: #0c9a61;
+  color: #D76585;
   background: #eee;
 }
 
 .tabs .tab a:hover {
-  color: #0c9a61;
+  color: #D76585;
 }
 
 .tabs .indicator {
-  background-color: #0c9a61;
+  background-color: #D76585;
 }
 
 /* add recipe */
@@ -1050,7 +1050,7 @@ img {
 
 .sign-up form p a {
   font-weight: 500;
-  color: #0c9a61;
+  color: #D76585;
 }
 
 .sign-up form p span {
@@ -1064,7 +1064,7 @@ img {
 
 .login form p a {
   font-weight: 500;
-  color: #0c9a61;
+  color: #D76585;
 }
 
 .login form p span {
@@ -1100,7 +1100,7 @@ img {
   margin-bottom: 10px;
   font-size: 36px;
   font-weight: 600;
-  color: #0c9a61;
+  color: #D76585;
 }
 
 .pricing-table .content .text-price span {
@@ -1122,11 +1122,11 @@ img {
 .pricing-table .content ul li ion-icon {
   font-size: 18px;
   margin-right: 5px;
-  color: #0c9a61;
+  color: #D76585;
 }
 
 .pricing-table .content.premium-price {
-  background: #0c9a61;
+  background: #D76585;
 }
 
 .pricing-table .content.premium-price h4,
@@ -1160,7 +1160,7 @@ img {
 }
 
 .ingredient-group .edit-ingredient-btn {
-  background: #0c9a61;
+  background: #D76585;
 }
 .ingredient-group .delete-ingredient-btn {
   background: #af0f0f;

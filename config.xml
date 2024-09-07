@@ -3,7 +3,7 @@
     <platform name="android">
         <resource-file src="google-services.json" target="app/google-services.json" />
     </platform>
-    <name>iUlam</name>
+    <name>Cooking In App: iUlam</name>
     <description>Sample Apache Cordova App</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
         Apache Cordova Team
@@ -11,6 +11,7 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <icon src="www/img/app logo.jpg" />
     
     <!-- status bar config -->
      <preference name="StatusBarOverlaysWebView" value="false" />
